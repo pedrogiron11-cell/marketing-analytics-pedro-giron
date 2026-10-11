@@ -28,7 +28,7 @@ FEATURES = ["recency_days", "frequency", "monetary", "email_open_rate", "tenure_
 
 @st.cache_data
 def load_data():
-    return pd.read_csv("data/uplift_campaign.csv")
+    return pd.read_csv("/data/uplift_campaign.csv")
 
 
 @st.cache_data
@@ -121,22 +121,6 @@ tabla_politicas = pd.DataFrame(
 
 st.dataframe(tabla_politicas)
 
-# for pct in range(10, 101, 10):
-#    n_c = int(len(test) * pct / 100)
-#    idx = test.sort_values("uplift_estimado", ascending=False).head(n_c).index
-#    valor_cliente, n = valor_de_la_politica(test, idx)
-#    resultados.append(
-#        {
-#            "pct_contactado": pct,
-#            "valor_por_cliente": round(valor_cliente, 2),
-#            "n_contactados": n,
-#            "valor_total": round(valor_cliente * n, 2),
-#        }
-#    )
-
-# tabla_politicas = pd.DataFrame(resultados)
-# tabla_politicas
-
 
 # --- TODO: calculen y grafiquen la curva Qini de su T-learner ---
 def curva_qini(test_df, score_col, steps=40):
@@ -195,7 +179,3 @@ ax.legend()
 plt.tight_layout()
 plt.savefig("curva_qini_laboratorio.png", dpi=150)
 st.pyplot(fig)
-
-# st.info(
-#    "Reemplacen cada TODO con su propio código. Revisen el notebook del laboratorio para la lógica exacta de cada pieza."
-# )
