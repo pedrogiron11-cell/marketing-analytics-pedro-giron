@@ -145,8 +145,10 @@ def curva_qini(test_df, score_col, steps=40):
 
 
 def coeficiente_qini(xs, ys, n):
-    area_modelo = np.trapz(ys, xs)
-    area_azar = np.trapz(np.linspace(0, ys[-1], len(xs)), xs)
+    #    area_modelo = np.trapz(ys, xs)
+    #    area_azar = np.trapz(np.linspace(0, ys[-1], len(xs)), xs)
+    area_modelo = np.trapezoid(ys, xs)
+    area_azar = np.trapezoid(np.linspace(0, ys[-1], len(xs)), xs)
     return (area_modelo - area_azar) / n
 
 
