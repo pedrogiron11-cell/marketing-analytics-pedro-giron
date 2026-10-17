@@ -25,11 +25,11 @@ GRIS = "#9A988E"
 
 @st.cache_data
 def cargar():
-    catalogo = pd.read_csv("data/catalogo.csv")
-    hist = pd.read_csv("data/ordenes_historial.csv")
-    hold = pd.read_csv("data/ordenes_holdout.csv")
-    exp = pd.read_csv("data/experimento.csv")
-    clientes = pd.read_csv("data/clientes.csv")
+    catalogo = pd.read_csv("Semana_4/Tarea/data/catalogo.csv")
+    hist = pd.read_csv("Semana_4/Tarea/data/ordenes_historial.csv")
+    hold = pd.read_csv("Semana_4/Tarea/data/ordenes_holdout.csv")
+    exp = pd.read_csv("Semana_4/Tarea/data/experimento.csv")
+    clientes = pd.read_csv("Semana_4/Tarea/data/clientes.csv")
     productos = list(catalogo["item"])
     M = (
         (pd.crosstab(hist["customer_id"], hist["item"]) > 0)
