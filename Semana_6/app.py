@@ -111,7 +111,7 @@ if archivo is not None:
 
 else:
 
-    ruta_default = Path("Semanaa6/segmentos_notebook.csv")
+    ruta_default = Path("Semana_6/segmentos_notebook.csv")
 
     if ruta_default.exists():
         df = pd.read_csv(ruta_default)
