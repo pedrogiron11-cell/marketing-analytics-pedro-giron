@@ -1,5 +1,8 @@
 streamlit
 pandas
 numpy
-nltk
 scikit-learn
+nltk
+plotly
+kmodes
+joblib
